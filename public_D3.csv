@@ -1,0 +1,19 @@
+day after tumor cell injection,Therapie_B,Therapie_B_1,Therapie_B_2,Therapie_B_3,Therapie_B_4,Therapie_A,Therapie_A_1,Therapie_A_2,Therapie_A_3,Therapie_A_4
+0,0,0,0,0,0,0,0,0,0,0
+2,1,0,0,1,1,0,1,1,0,1
+5,3,6,4,6,8,6,9,6,4,2
+7,6,6,6,6,8,6,9,8,4,2
+9,6,6,6,6,10,8,6,10,8,2
+12,6,6,6,6,10,4,4,8,6,4
+14,12,6,9,12,18,2,9,15,12,6
+16,15,6,15,12,21,2,9,15,15,9
+19,24,6,32,15,50,2,16,18,28,12
+21,30,6,54,35,84,4,16,28,45,15
+23,35,20,NA,40,NA,6,25,54,NA,20
+26,54,20,NA,70,NA,10,70,NA,NA,35
+28,108,30,NA,NA,NA,24,99,NA,NA,NA
+30,135,42,NA,NA,NA,36,NA,NA,NA,NA
+33,NA,49,NA,NA,NA,84,NA,NA,NA,NA
+35,NA,56,NA,NA,NA,150,NA,NA,NA,NA
+37,NA,NA,NA,NA,NA,180,NA,NA,NA,NA
+41,NA,NA,NA,NA,NA,240,NA,NA,NA,NA
