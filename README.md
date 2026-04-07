@@ -42,6 +42,9 @@ The code is organised to separate the main reference pipeline, a scenario-specif
 - `reference_table.csv`  
   Exported reference planning table generated from the main reference pipeline
 
+- `model_outputs/`  
+  Full model outputs for all 50 runs, organised by scenario in separate subfolders.
+
 ## Main workflow
 
 The main reference pipeline follows these steps:
