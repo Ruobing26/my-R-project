@@ -37,6 +37,10 @@ The code is organised to separate the main reference pipeline, a scenario-specif
 - `03_plot_prompt_input_figure.R`  
   Plotting script for the exploratory figure shown in Chapter 3. The figure displays the tumour trajectories in the three original pilot datasets and marks both the earliest visible group separation and the later start of the prompt-input window.
 
+- `04_manual_formula_checks.R`  
+  Manual validation script based on the formulas presented in Chapter 2. This script reproduces selected reference calculations analytically rather than via package-based functions and compares them with the exported reference values.
+  
+
 ### Output file
 
 - `Referenztabelle_table.csv`  
@@ -44,6 +48,12 @@ The code is organised to separate the main reference pipeline, a scenario-specif
 
 - `model_outputs/`  
   contains the full input prompt and model output for all 50 runs, organised by scenario.
+
+- `Referenztabelle_comparison.csv`
+Comparison table used for reproducibility and validation checks.
+
+- `Referenztabelle_manual.csv`
+Manual validation table for selected formula-based checks.
 
 ## Main workflow
 
