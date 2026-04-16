@@ -1,6 +1,6 @@
 # Reference pipeline for the thesis
 
-This repository contains the anonymised pilot datasets and the R code used in Chapters 3 and 4 of the thesis.
+This repository contains the electronic appendix material for the bachelor thesis, including the reference pipeline, validation scripts, reference tables, and the full prompt-and-output records for all 50 model runs.
 
 ## Purpose
 
@@ -27,15 +27,13 @@ The code is organised to separate the main reference pipeline, a scenario-specif
 ### R scripts
 
 - `01_reference_pipeline.R`  
-  Main reference pipeline. This script imports the anonymised pilot datasets, reshapes them into a standardised long format, applies the complete-day restriction, computes day-specific group summaries, and calculates the reference sample sizes used to benchmark the LLM outputs.
-
-  In addition to the main absolute-endpoint reference calculations, the script also contains auxiliary pre-specified calculations for pairwise day-to-day contrasts. These were prepared in advance as part of the broader reproducibility framework and were not added post hoc in response to individual model outputs.
+  Main reference pipeline. Imports the anonymised pilot datasets, reshapes them into long format, applies the complete-day restriction, computes day-specific group summaries, and calculates the reference sample sizes used to benchmark the LLM outputs.
 
 - `02_scenario_validation_E1.R`  
-  Scenario-specific validation for E1. This script reproduces the benchmark calculation under the exact assumptions imposed in the E1 prompt, including the fixed target effect size and the selectively favourable variance input.
-
+  Scenario-specific validation for E1 under the exact assumptions imposed in the E1 prompt.
+  
 - `03_plot_prompt_input_figure.R`  
-  Plotting script for the exploratory figure shown in Chapter 3. The figure displays the tumour trajectories in the three original pilot datasets and marks both the earliest visible group separation and the later start of the prompt-input window.
+  Plotting script for the exploratory figure shown in Chapter 3.
 
 - `04_manual_formula_checks.R`  
   Manual validation script based on the formulas presented in Chapter 2. This script reproduces selected reference calculations analytically rather than via package-based functions and compares them with the exported reference values.
