@@ -47,20 +47,29 @@ plot_df <- pilot_plus %>%
 # Build the exploratory line plot with error bars and reference lines
 P_line <- ggplot(
   plot_df,
-  aes(x = day, y = mean_tumor, color = group, group = group)
+  aes(
+    x = day,
+    y = mean_tumor,
+    group = group,
+    color = group,
+    linetype = group,
+    shape = group
+  )
 ) +
-  geom_line(linewidth = 0.7) +
-  geom_point(size = 1.8) +
+  geom_line(linewidth = 0.9) +
+  geom_point(size = 2.2, stroke = 0.7) +
   geom_errorbar(
     aes(ymin = mean_tumor - se_tumor, ymax = mean_tumor + se_tumor),
-    width = 0.25,
-    linewidth = 0.4
+    width = 0.22,
+    linewidth = 0.45,
+    show.legend = FALSE
   ) +
   geom_vline(
     data = sep_df,
     aes(xintercept = sep_day),
     linetype = "dotted",
     linewidth = 0.5,
+    colour = "grey30",
     inherit.aes = FALSE
   ) +
   geom_vline(
@@ -68,27 +77,53 @@ P_line <- ggplot(
     aes(xintercept = input_day),
     linetype = "dashed",
     linewidth = 0.6,
+    colour = "grey10",
     inherit.aes = FALSE
   ) +
   facet_wrap(~ dataset, scales = "free_x", nrow = 1) +
-  theme_bw(base_size = 11) +
+  scale_color_manual(
+    values = c("A" = "#0072B2", "B" = "#D55E00"),
+    name = "Gruppe"
+  ) +
+  scale_linetype_manual(
+    values = c("A" = "solid", "B" = "longdash"),
+    name = "Gruppe"
+  ) +
+  scale_shape_manual(
+    values = c("A" = 16, "B" = 17),
+    name = "Gruppe"
+  ) +
   labs(
     x = "Tag nach Tumorzellinjektion",
-    y = "Mittlere Tumorfläche (mm²)",
-    color = "Gruppe"
+    y = expression("Mittlere Tumorfläche (mm"^2*")")
   ) +
-  guides(color = guide_legend(nrow = 1)) +
+  guides(
+    color = guide_legend(
+      nrow = 1,
+      byrow = TRUE,
+      override.aes = list(linewidth = 0.9, size = 2.4)
+    ),
+    linetype = "none",
+    shape = "none"
+  ) +
+  theme_bw(base_size = 11) +
   theme(
+    strip.background = element_rect(fill = "grey95", colour = "black", linewidth = 0.4),
     strip.text = element_text(face = "bold", size = 11),
     axis.title = element_text(size = 11),
-    axis.text = element_text(size = 10),
+    axis.text = element_text(size = 10, colour = "black"),
     legend.title = element_text(size = 11),
     legend.text = element_text(size = 10),
     legend.position = "bottom",
     legend.direction = "horizontal",
+    legend.box.margin = margin(t = 2),
     panel.grid.minor = element_blank(),
-    panel.grid.major.x = element_blank()
+    panel.grid.major.x = element_blank(),
+    panel.grid.major.y = element_line(colour = "grey85", linewidth = 0.3),
+    panel.border = element_rect(linewidth = 0.5),
+    plot.margin = margin(5.5, 8, 5.5, 5.5)
   )
+
 
 # Print the plot in the current R session
 P_line
@@ -111,3 +146,6 @@ ggsave(
   units = "cm",
   dpi = 600
 )
+
+
+
